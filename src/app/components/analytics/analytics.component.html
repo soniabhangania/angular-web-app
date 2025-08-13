@@ -1,0 +1,78 @@
+<div class="analytics-container">
+  <div class="analytics-header">
+    <h1 class="page-title">📊 Analytics Dashboard</h1>
+    <p class="page-subtitle">Insights from our user and content data</p>
+  </div>
+
+  <div *ngIf="loading" class="loading-state">
+    <div class="loading-spinner"></div>
+    <p>Loading analytics data...</p>
+  </div>
+
+  <div *ngIf="error" class="error-state">
+    <div class="error-icon">❌</div>
+    <p>{{ error }}</p>
+  </div>
+
+  <div *ngIf="analytics && !loading && !error" class="analytics-grid">
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">👥</div>
+        <div class="stat-content">
+          <h3>Total Users</h3>
+          <p class="stat-number">{{ analytics.totalUsers }}</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">📝</div>
+        <div class="stat-content">
+          <h3>Total Posts</h3>
+          <p class="stat-number">{{ analytics.totalPosts }}</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">📊</div>
+        <div class="stat-content">
+          <h3>Avg Posts/User</h3>
+          <p class="stat-number">{{ analytics.averagePostsPerUser }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Companies -->
+    <div class="chart-card">
+      <h3 class="chart-title">🏢 Top Companies</h3>
+      <div class="companies-list">
+        <div *ngFor="let company of analytics.topCompanies; let i = index" 
+             class="company-item" 
+             [style.animation-delay]="i * 0.1 + 's'">
+          <span class="company-rank">#{{ i + 1 }}</span>
+          <span class="company-name">{{ company }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cities Distribution -->
+    <div class="chart-card">
+      <h3 class="chart-title">🌍 Cities Distribution</h3>
+      <div class="cities-chart">
+        <div *ngFor="let city of getCityEntries(); let i = index" 
+             class="city-bar" 
+             [style.animation-delay]="i * 0.2 + 's'">
+          <div class="city-info">
+            <span class="city-name">{{ city[0] }}</span>
+            <span class="city-count">{{ city[1] }}</span>
+          </div>
+          <div class="city-progress">
+            <div class="city-fill" 
+                 [style.width]="(city[1] / analytics.totalUsers) * 100 + '%'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

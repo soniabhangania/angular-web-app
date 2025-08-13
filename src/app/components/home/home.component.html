@@ -1,26 +1,155 @@
+<!-- home.component.html -->
 <div class="home-container">
-  <div class="hero-section">
-    <h1>Welcome to Our Angular Application</h1>
-    <p class="lead">This application demonstrates Angular 18 features including routing, HTTP client, and reactive forms.</p>
-    
-    <div class="features">
-      <div class="feature-card">
-        <h3>🏠 Home Page</h3>
-        <p>Simple landing page with introductory content</p>
-      </div>
-      <div class="feature-card">
-        <h3>📊 API Integration</h3>
-        <p>Fetch and display data from external APIs</p>
-      </div>
-      <div class="feature-card">
-        <h3>📝 Reactive Forms</h3>
-        <p>Interactive forms with validation</p>
+  <!-- Hero Section with Animated Background -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
       </div>
     </div>
     
-    <div class="cta-buttons">
-      <a routerLink="/api-data" class="btn btn-primary">View API Data</a>
-      <a routerLink="/form" class="btn btn-secondary">Contact Us</a>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-icon">✨</span>
+        <span>Welcome to the Future</span>
+      </div>
+      
+      <h1 class="hero-title">
+        Next-Gen Angular
+        <span class="gradient-text">Platform</span>
+      </h1>
+      
+      <p class="hero-description">
+        Discover powerful data insights, manage user interactions, and experience 
+        cutting-edge web technology with our comprehensive Angular application.
+      </p>
+      
+      <div class="hero-actions">
+        <button routerLink="/analytics" class="btn btn-primary">
+          <span class="btn-icon">📊</span>
+          Explore Analytics
+        </button>
+        <button routerLink="/users" class="btn btn-secondary">
+          <span class="btn-icon">👥</span>
+          Browse Users
+        </button>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">Data Points</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Active Users</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Availability</span>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="features-section">
+    <div class="section-header">
+      <h2 class="section-title">Platform Capabilities</h2>
+      <p class="section-subtitle">Explore what makes our application powerful and unique</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card feature-primary" routerLink="/users">
+        <div class="feature-header">
+          <div class="feature-icon">👥</div>
+          <h3>User Management</h3>
+        </div>
+        <p>Advanced user directory with real-time data fetching from external APIs. Search, filter, and explore user profiles seamlessly.</p>
+        <div class="feature-footer">
+          <span class="feature-tag">API Integration</span>
+          <span class="feature-arrow">→</span>
+        </div>
+      </div>
+      
+      <div class="feature-card feature-secondary" routerLink="/analytics">
+        <div class="feature-header">
+          <div class="feature-icon">📊</div>
+          <h3>Data Analytics</h3>
+        </div>
+        <p>Interactive dashboard with live charts, statistics, and insights. Transform raw data into meaningful visualizations.</p>
+        <div class="feature-footer">
+          <span class="feature-tag">Data Visualization</span>
+          <span class="feature-arrow">→</span>
+        </div>
+      </div>
+      
+      <div class="feature-card feature-accent" routerLink="/contact">
+        <div class="feature-header">
+          <div class="feature-icon">✉️</div>
+          <h3>Smart Forms</h3>
+        </div>
+        <p>Intelligent reactive forms with real-time validation, custom error handling, and seamless user experience.</p>
+        <div class="feature-footer">
+          <span class="feature-tag">Form Validation</span>
+          <span class="feature-arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Stack -->
+  <section class="tech-section">
+    <div class="section-header">
+      <h2 class="section-title">Built with Modern Technology</h2>
+      <p class="section-subtitle">Powered by cutting-edge web technologies</p>
+    </div>
+    
+    <div class="tech-grid">
+      <div class="tech-item">
+        <div class="tech-logo">🅰️</div>
+        <h4>Angular 18</h4>
+        <p>Latest Angular framework with standalone components</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-logo">🔥</div>
+        <h4>TypeScript</h4>
+        <p>Type-safe development with modern JavaScript</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-logo">🎨</div>
+        <h4>Modern CSS</h4>
+        <p>Responsive design with CSS Grid and Flexbox</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-logo">⚡</div>
+        <h4>RxJS</h4>
+        <p>Reactive programming for async operations</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <div class="cta-icon">🚀</div>
+      <h2 class="cta-title">Ready to Get Started?</h2>
+      <p class="cta-description">
+        Join thousands of users who trust our platform for their data management needs.
+      </p>
+      <div class="cta-actions">
+        <button routerLink="/contact" class="btn btn-primary">
+          Get In Touch
+        </button>
+        <button routerLink="/analytics" class="btn btn-outline">
+          View Demo
+        </button>
+      </div>
+    </div>
+  </section>
 </div>

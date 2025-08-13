@@ -1,17 +1,79 @@
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-logo">
-      <a routerLink="/">MyApp</a>
+      <a routerLink="/" class="logo-link">
+        <span class="logo-icon">🚀</span>
+        <span class="logo-text">ModernApp</span>
+      </a>
     </div>
-    <ul class="nav-menu">
+
+    <!-- Desktop Menu -->
+    <ul class="nav-menu desktop-menu">
       <li class="nav-item">
-        <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
+        <a routerLink="/home" routerLinkActive="active" class="nav-link">
+          <span class="nav-icon">🏠</span>
+          Home
+        </a>
       </li>
       <li class="nav-item">
-        <a routerLink="/api-data" routerLinkActive="active" class="nav-link">API Data</a>
+        <a routerLink="/users" routerLinkActive="active" class="nav-link">
+          <span class="nav-icon">👥</span>
+          Users
+        </a>
       </li>
       <li class="nav-item">
-        <a routerLink="/form" routerLinkActive="active" class="nav-link">Contact Form</a>
+        <a routerLink="/analytics" routerLinkActive="active" class="nav-link">
+          <span class="nav-icon">📊</span>
+          Analytics
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/contact" routerLinkActive="active" class="nav-link">
+          <span class="nav-icon">✉️</span>
+          Contact
+        </a>
+      </li>
+    </ul>
+
+    <!-- Theme Toggle & Mobile Menu -->
+    <div class="nav-controls">
+      <button class="theme-toggle" (click)="toggleTheme()" aria-label="Toggle theme">
+        <span class="theme-icon">{{ isDarkTheme ? '☀️' : '🌙' }}</span>
+      </button>
+      <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" aria-label="Toggle menu">
+        <span class="hamburger" [class.open]="isMobileMenuOpen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <ul class="nav-menu mobile-menu" [class.open]="isMobileMenuOpen">
+      <li class="nav-item">
+        <a routerLink="/home" routerLinkActive="active" class="nav-link" (click)="toggleMobileMenu()">
+          <span class="nav-icon">🏠</span>
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/users" routerLinkActive="active" class="nav-link" (click)="toggleMobileMenu()">
+          <span class="nav-icon">👥</span>
+          Users
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/analytics" routerLinkActive="active" class="nav-link" (click)="toggleMobileMenu()">
+          <span class="nav-icon">📊</span>
+          Analytics
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/contact" routerLinkActive="active" class="nav-link" (click)="toggleMobileMenu()">
+          <span class="nav-icon">✉️</span>
+          Contact
+        </a>
       </li>
     </ul>
   </div>
