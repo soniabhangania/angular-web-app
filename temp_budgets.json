@@ -1,0 +1,17 @@
+"budgets": [
+  {
+    "type": "initial",
+    "maximumWarning": "500mb",
+    "maximumError": "1gb"
+  },
+  {
+    "type": "anyComponentStyle",
+    "maximumWarning": "500mb", 
+    "maximumError": "1gb"
+  },
+  {
+    "type": "any",
+    "maximumWarning": "500mb",
+    "maximumError": "1gb"
+  }
+]
