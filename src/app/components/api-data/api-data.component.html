@@ -1,0 +1,24 @@
+<div class="api-data-container">
+  <h2>User Directory</h2>
+  <p>Data fetched from JSONPlaceholder API</p>
+  
+  <div *ngIf="loading" class="loading">
+    <p>Loading users...</p>
+  </div>
+  
+  <div *ngIf="error" class="error">
+    <p>{{ error }}</p>
+  </div>
+  
+  <div *ngIf="!loading && !error" class="users-grid">
+    <div *ngFor="let user of users" class="user-card">
+      <h3>{{ user.name }}</h3>
+      <div class="user-info">
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Phone:</strong> {{ user.phone }}</p>
+        <p><strong>Website:</strong> {{ user.website }}</p>
+        <p><strong>Company:</strong> {{ user.company.name }}</p>
+      </div>
+    </div>
+  </div>
+</div>
